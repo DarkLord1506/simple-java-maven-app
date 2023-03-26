@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('CloneJob') {
+            steps {
+                echo 'Cloning repo'
+                git 'https://github.com/DarkLord1506/simple-java-maven-app'
+            }
+        }
+        stage('BuildJob') {
+            steps {
+                echo 'Building ....'
+                sh 'mvn compile'
+        }
+        }
+        stage('TestJob') {
+            steps {
+                echo 'Testing'
+                sh 'mvn test'
+            }
+        }
+    }
+}
