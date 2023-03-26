@@ -9,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class AppTest
 {
+
+    private static final String MESSAGE = "Hello World! New Commit";
     @Test
     public void testAppConstructor() {
         App app1 = new App();
@@ -20,6 +22,6 @@ public class AppTest
     public void testAppMessage()
     {
         App app = new App();
-        assertEquals("Hello World!", app.getMessage());
+        assertEquals(MESSAGE, app.getMessage());
     }
 }
